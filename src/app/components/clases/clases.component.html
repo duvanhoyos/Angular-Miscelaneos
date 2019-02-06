@@ -1,0 +1,33 @@
+<p>
+    clases works!
+</p>
+
+<div [ngClass]="alerta" role="alert" role="alert">
+    A simple primary alert—check it out!
+</div>
+
+<hr>
+
+<button type="button" class="btn btn-info" (click)="alerta = 'alert-info'">info</button>
+
+<button type="button" class="btn btn-success" (click)="alerta = 'alert-success'">success</button>
+
+<h3 [ngClass]=" { 'text-darger': propiedades.danger, 'text-info': !propiedades.danger }">
+
+    Hola mundo
+
+</h3>
+
+<button (click)="propiedades.danger = !propiedades.danger" type="button" name="button" class="btn" [ngClass]="{ 'btn-danger': propiedades.danger, 'btn-info':!propiedades.danger }">Cambiar
+</button>
+
+<hr>
+
+<h3>Proceso Async</h3>
+<button (click)="ejecutar()" class="btn btn-primary" type="button" name="button" [disabled]="cargando">
+
+<i [ngClass]="{'fa-save':!cargando, 'fa-circle fa-spin':cargando } " class="fa" ></i>
+
+<span *ngIf="!cargando" >Guardar cambios</span>
+<span *ngIf="cargando" >Guardando...</span>
+</button>
